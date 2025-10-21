@@ -1,15 +1,24 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
   font-family: Arial, sans-serif;
-  background-image: url("imagenes/maquetado.webp");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  height: 100%;
 }
 
-/* Overlay a la izquierda */
+/* Contenedor padre */
+.contenedor-principal {
+  padding: auto;
+  position: relative;
+  height: 100vh;
+  object-position: center;    
+  background-image: url("imagenes/maquetado.webp");
+  object-fit: cover;  
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden; /* Evita que el contenido se sobresalga */
+}
+
+/* Cuadro azul semitransparente */
 .cuadro {
   position: absolute;
   top: 0;
@@ -20,15 +29,17 @@ body {
   z-index: 1;
 }
 
-/* Contenido encima del overlay */
+/* Contenedor del texto */
 .contenido {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
   color: white;
   z-index: 2;
-  max-width: 45%;
+  max-width: 40%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
 
 .contenido h1 {
@@ -39,8 +50,8 @@ body {
 
 .contenido p {
   font-size: 1.2rem;
-  text-align: left;
   line-height: 1.6rem;
+  text-align: left;
 }
 
 .contenido button {
@@ -52,12 +63,15 @@ body {
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
-  text-align: left;
 }
 
-/* 🔵 Franja azul inferior */
+.contenido button:hover {
+  background-color: #27ae60;
+}
+
+/* Franja azul inferior */
 .franja-azul {
-  position: fixed; /* Fija al fondo de la pantalla */
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -65,7 +79,7 @@ body {
   color: white;
   text-align: center;
   padding: 25px 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 1px;
   z-index: 3;
