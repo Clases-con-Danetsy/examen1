@@ -5,20 +5,17 @@ body {
   height: 100%;
 }
 
-/* Contenedor padre */
 .contenedor-principal {
-  padding: auto;
   position: relative;
   height: 100vh;
-  object-position: center;    
   background-image: url("imagenes/maquetado.webp");
-  object-fit: cover;  
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  overflow: hidden; /* Evita que el contenido se sobresalga */
+  overflow: hidden;
 }
 
-/* Cuadro azul semitransparente */
 .cuadro {
   position: absolute;
   top: 0;
@@ -29,7 +26,6 @@ body {
   z-index: 1;
 }
 
-/* Contenedor del texto */
 .contenido {
   position: relative;
   top: 50%;
@@ -51,7 +47,7 @@ body {
 .contenido p {
   font-size: 1.2rem;
   line-height: 1.6rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .contenido button {
@@ -63,13 +59,13 @@ body {
   font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
+  width: 100%;
 }
 
 .contenido button:hover {
   background-color: #27ae60;
 }
 
-/* Franja azul inferior */
 .franja-azul {
   position: absolute;
   bottom: 0;
